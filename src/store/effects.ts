@@ -1,5 +1,6 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import { getNews, getNewsById } from "../api";
+import { setErrorsItem, setLoadingItem, setNewsItem } from "./newsItemSlice";
 import { setErrors, setLoading, setNews } from "./newsSlice";
 
 export const fetchNews = createAsyncThunk("news", async (_, { dispatch }) => {
@@ -22,3 +23,19 @@ export const fetchNews = createAsyncThunk("news", async (_, { dispatch }) => {
     }
   }
 });
+
+
+export const fetchNewsItem = createAsyncThunk("newsItem", async ( id: number, { dispatch }) => {
+  try {
+    dispatch(setLoadingItem(true));
+    const response = await getNewsById(id);
+    dispatch(setNewsItem(response.data));
+    dispatch(setLoadingItem(false));
+  } catch (error) {
+    if (error instanceof Error) {
+      dispatch(setLoadingItem(false));
+      dispatch(setErrorsItem(error.message));
+    }
+  }
+});
+
