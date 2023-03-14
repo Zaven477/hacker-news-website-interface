@@ -7,9 +7,6 @@
     font-size: 20px;
 }
 
-.size {
-    font-size: 20px;
-}
 
 .btn-news {
     margin-left: 1100px;
@@ -23,3 +20,6 @@
     border-radius: 3px;
 }
 
+.font {
+    font-size: 20px;
+}

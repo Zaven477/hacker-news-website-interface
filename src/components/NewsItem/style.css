@@ -1,0 +1,39 @@
+.newsItem {
+    color: #4682B4
+}
+
+.loading {
+   font-size: 20px;
+}
+
+
+.error {
+  font-size: 20px;
+  color: #CD5C5C
+}
+
+.size {
+    font-size: 30px;
+}
+
+.indent {
+    margin-left: 20px;
+}
+
+.date {
+    font-size: 18px;
+}
+
+.by {
+    font-size: 18px;
+}
+
+.descendants {
+   font-size: 18px;
+}
+
+.comments {
+   font-size: 20px;
+   font-weight: bold;
+}
+
