@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { INews } from "./types";
 
 export type TNewsItemState = {
-  newsItem: INews | null,
-  loading: boolean,
+  newsItem: INews | null;
+  loading: boolean;
   errors: string;
-}
+};
 
 const initialState: TNewsItemState = {
   newsItem: null,
@@ -29,6 +29,7 @@ const newsItemSlice = createSlice({
   },
 });
 
-export const { setNewsItem, setLoadingItem, setErrorsItem } = newsItemSlice.actions;
+export const { setNewsItem, setLoadingItem, setErrorsItem } =
+  newsItemSlice.actions;
 
 export default newsItemSlice.reducer;

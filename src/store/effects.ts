@@ -24,18 +24,19 @@ export const fetchNews = createAsyncThunk("news", async (_, { dispatch }) => {
   }
 });
 
-
-export const fetchNewsItem = createAsyncThunk("newsItem", async ( id: number, { dispatch }) => {
-  try {
-    dispatch(setLoadingItem(true));
-    const response = await getNewsById(id);
-    dispatch(setNewsItem(response.data));
-    dispatch(setLoadingItem(false));
-  } catch (error) {
-    if (error instanceof Error) {
+export const fetchNewsItem = createAsyncThunk(
+  "newsItem",
+  async (id: number, { dispatch }) => {
+    try {
+      dispatch(setLoadingItem(true));
+      const response = await getNewsById(id);
+      dispatch(setNewsItem(response.data));
       dispatch(setLoadingItem(false));
-      dispatch(setErrorsItem(error.message));
+    } catch (error) {
+      if (error instanceof Error) {
+        dispatch(setLoadingItem(false));
+        dispatch(setErrorsItem(error.message));
+      }
     }
   }
-});
-
+);

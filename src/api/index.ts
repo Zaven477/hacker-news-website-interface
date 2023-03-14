@@ -7,9 +7,9 @@ export const getNews = async () => {
   return response.data.slice(0, 100);
 };
 
-
-
-export const getNewsById = async(id: number) => {
-    const response = await axios.get(`https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`)
-    return response;
-}
+export const getNewsById = async (id: number) => {
+  const response = await axios.get(
+    `https://hacker-news.firebaseio.com/v0/item/${id}.json?print=pretty`
+  );
+  return response;
+};

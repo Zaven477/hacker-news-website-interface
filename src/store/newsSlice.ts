@@ -2,10 +2,10 @@ import { createSlice } from "@reduxjs/toolkit";
 import { INews } from "./types";
 
 export type TNewsState = {
-  news: INews[],
-  loading: boolean,
+  news: INews[];
+  loading: boolean;
   errors: string;
-}
+};
 
 const initialState: TNewsState = {
   news: [],

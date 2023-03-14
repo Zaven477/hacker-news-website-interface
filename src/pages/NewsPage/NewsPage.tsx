@@ -16,15 +16,17 @@ export const NewsPage = () => {
   }, [dispatch]);
 
   useEffect(() => {
-    setInterval(() => dispatch(fetchNews()), 60000)
-  }, [dispatch])
+    setInterval(() => dispatch(fetchNews()), 60000);
+  }, [dispatch]);
 
   return (
     <div className="indent">
       {loading && <p className="font">Loading...</p>}
       {error && <div className="color">Loading error</div>}
       {!loading && !error && <h1>News list</h1>}
-      <button className="btn-news" onClick={() => dispatch(fetchNews())}>Update news</button>
+      <button className="btn-news" onClick={() => dispatch(fetchNews())}>
+        Update news
+      </button>
       {news.map((item: INews) => (
         <NewsList
           key={item.id}
