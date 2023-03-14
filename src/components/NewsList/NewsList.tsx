@@ -1,4 +1,5 @@
 import { publicationDate } from "../../utils";
+import { Link } from "react-router-dom";
 import "./style.css";
 
 interface INewsProps {
@@ -15,9 +16,11 @@ export const NewsList = ({ title, score, by, time, id }: INewsProps) => {
   return (
     <div>
       <div className="line">
-       <h2 className="title-color">{title}</h2>
+        <Link to={`news/${id}`} className="link">
+          <h2 className="title-color">{title}</h2>
+        </Link>
         <p>
-        Rate: {score} | By: {by} | Date: {date}
+          Rate: {score} | By: {by} | Date: {date}
         </p>
       </div>
     </div>
