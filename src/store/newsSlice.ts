@@ -1,6 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
+import { INews } from "./types";
 
-const initialState = {
+export type TNewsState = {
+  news: INews[],
+  loading: boolean,
+  errors: string;
+}
+
+const initialState: TNewsState = {
   news: [],
   loading: false,
   errors: "",
