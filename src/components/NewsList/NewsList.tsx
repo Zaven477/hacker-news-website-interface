@@ -1,4 +1,5 @@
-import { publicationDate } from "../utils";
+import { publicationDate } from "../../utils";
+import "./style.css";
 
 interface INewsProps {
   title: string;
@@ -13,10 +14,12 @@ export const NewsList = ({ title, score, by, time, id }: INewsProps) => {
 
   return (
     <div>
-      <h2>{title}</h2>
-      <p>
+      <div className="line">
+       <h2 className="title-color">{title}</h2>
+        <p>
         Rate: {score} | By: {by} | Date: {date}
-      </p>
+        </p>
+      </div>
     </div>
   );
 };
