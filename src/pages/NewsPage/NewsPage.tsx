@@ -21,8 +21,8 @@ export const NewsPage = () => {
 
   return (
     <div className="indent">
-      {loading && <p className="size">Loading...</p>}
-      {error && <p className="color">Loading error</p>}
+      {loading && <p className="font">Loading...</p>}
+      {error && <div className="color">Loading error</div>}
       {!loading && !error && <h1>News list</h1>}
       <button className="btn-news" onClick={() => dispatch(fetchNews())}>Update news</button>
       {news.map((item: INews) => (
