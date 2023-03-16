@@ -6,7 +6,7 @@ import { INews } from "../../store/types";
 import "./style.css";
 
 export const NewsPage = () => {
-  const news = useAppSelector((state) => state.news.news);
+  const news = useAppSelector((state) => state.news.news.filter((item) => item !== null))
   const loading = useAppSelector((state) => state.news.loading);
   const error = useAppSelector((state) => state.news.errors);
   const dispatch = useAppDispatch();
