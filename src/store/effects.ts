@@ -10,10 +10,12 @@ export const fetchNews = createAsyncThunk("news", async (_, { dispatch }) => {
 
     const promises = response.map(async (id: number) => {
       const result = await getNewsById(id);
+
       return result.data;
     });
 
     const news = await Promise.all(promises);
+
     dispatch(setNews(news));
     dispatch(setLoading(false));
   } catch (error) {

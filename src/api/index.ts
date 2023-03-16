@@ -13,3 +13,15 @@ export const getNewsById = async (id: number) => {
   );
   return response;
 };
+
+export const getCommentsById = async (id: number) => {
+  const response = await fetch(
+    `https://hacker-news.firebaseio.com/v0/item/${id}.json`,
+    {
+      method: "GET",
+      headers: { "Content-Type": "application/json" },
+    }
+  );
+
+  return response.json();
+};
