@@ -13,6 +13,8 @@ interface INewsProps {
 export const NewsList = ({ title, score, by, time, id }: INewsProps) => {
   const date = publicationDate(time);
 
+  
+
   return (
     <div>
       <div className="line">
