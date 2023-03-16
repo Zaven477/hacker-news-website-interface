@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 import { useParams } from "react-router-dom";
+import { CommentsItem } from "../../components/CommentsItem/CommentsItem";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { fetchNewsItem } from "../../store/effects";
 import { publicationDate } from "../../utils";
@@ -40,7 +41,12 @@ export const NewsItem = () => {
       <p className="date">Date: {date}</p>
       <p className="by">By: {newsItem.by}</p>
       <p className="descendants">Descendants: {newsItem.descendants}</p>
-      <p className="comments">Comments: </p>
+      <div>
+        <p className="comments">Comments:</p>{" "}
+        {newsItem.kids?.map((id) => (
+          <CommentsItem key={id} id={id} />
+        ))}
+      </div>
     </div>
   );
 };
