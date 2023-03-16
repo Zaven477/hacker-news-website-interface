@@ -4,6 +4,7 @@ import { CommentsItem } from "../../components/CommentsItem/CommentsItem";
 import { useAppDispatch, useAppSelector } from "../../hooks";
 import { fetchNewsItem } from "../../store/effects";
 import { publicationDate } from "../../utils";
+import { Link } from 'react-router-dom';
 import "./style.css";
 
 export const NewsItem = () => {
@@ -35,6 +36,7 @@ export const NewsItem = () => {
   return (
     <div className="indent">
       <h1 className="newsItem">{newsItem.title}</h1>
+      <Link to="/"><button className="back">Go back</button></Link>
       <a href={newsItem.url} className="size">
         {newsItem.url}
       </a>
